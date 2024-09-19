@@ -1,11 +1,11 @@
 from flask import Flask, request
-from markupsafe import escape
 
 app = Flask(__name__)
 
 @app.route("/")
 def heloo():
-    return """<!DOCTYPE html>
+    return """
+<!DOCTYPE html>
 <html lang="kr">
 <head>
 <meta charset="UTF-8">
@@ -20,7 +20,8 @@ def heloo():
 <button type="submit">출력</button>
 </form>
 </body>
-</html>"""
+</html>
+"""
 
 @app.route("/gugudan/")
 def gugudan():
