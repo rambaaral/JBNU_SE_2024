@@ -14,6 +14,7 @@ def about():
 @app.route("/blog")
 def blog():
     return render_template('blog.html', title = 'blog', subtitle = '블로그')
+
 def main():
     app.run()
 
