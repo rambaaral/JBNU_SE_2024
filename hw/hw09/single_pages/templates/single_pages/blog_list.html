@@ -1,0 +1,26 @@
+{% extends './layout.html' %}
+{% load static %}
+
+{% block content %}
+{% if posts|length > 0 %}
+{% for post in posts %}
+    <section>
+    <h2>
+    {% if post.url %}
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    {% else %}
+    {{ post.title }}
+    {% endif %}
+    </h2>
+    <ul>
+        <li>
+            {{ post.content }}
+        </li>
+    </ul>
+    </section>
+    <br>
+{% endfor %}
+{% else %}
+    <p>내용 없음</p>
+{% endif %}
+{% endblock %}
