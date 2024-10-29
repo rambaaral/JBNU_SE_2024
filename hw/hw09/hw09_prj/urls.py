@@ -17,10 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
-
 urlpatterns = [
-    #path('blog/', include('blog.urls')), #아직 블로그 기능을 쓰지 않는 관계로 주석처리
     path('admin/', admin.site.urls),
     path('', include('single_pages.urls')),
 ]
