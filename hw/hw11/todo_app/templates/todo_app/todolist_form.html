@@ -9,10 +9,10 @@
             {% csrf_token %}
             {{ form.as_p }}
             <input
-                value="Save"
+                value="저장"
                 type="submit">
             <input
-                value="Cancel"
+                value="취소"
                 type="button"
                 onclick="location.href='{% url "index" %}';">
         </form>

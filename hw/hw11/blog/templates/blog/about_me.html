@@ -1,0 +1,14 @@
+{% extends './layout.html' %}
+{% load static %}
+
+{% block content %}
+    <section width="100%">
+        <h2>저희에 대해</h2>
+        <p>안녕하세요! 저희는 스마트팜학과 21학번 김성은, 23학번 정서현입니다.</p>
+        <p>취미는 <A HREF="{% static 'blog/image/music.jpg' %}" target="img">노래 감상</A>과 <A HREF="{% static 'blog/image/health.jpg' %}" target="img">헬스</A>입니다. 앞으로 과제를 통해 성장해 나가는 모습을 보여드리겠습니다.</p>
+        <h3>저희의 취미</h3>
+        <figure>
+            <iframe src="" name="img" style="display:block; width:100%; height: 100vh"> </iframe>
+        </figure>
+    </section>
+{% endblock %}

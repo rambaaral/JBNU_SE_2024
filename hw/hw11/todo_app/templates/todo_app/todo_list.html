@@ -4,7 +4,7 @@
 <div>
     <div>
         <div>
-            <h3>Edit list:</h3>
+            <h3>리스트 편집</h3>
             <h5>{{ todo_list.title | upper }}</h5>
         </div>
         <ul>
@@ -21,7 +21,7 @@
                 </div>
             </li>
             {% empty %}
-            <p>There are no to-do items in this list.</p>
+            <p>이 리스트 안에는 할 일이 없다</p>
             {% endfor %}
         </ul>
         <p>

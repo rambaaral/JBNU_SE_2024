@@ -1,0 +1,17 @@
+{% extends './layout.html' %}
+{% load static %}
+
+{% block content %}
+    <section>
+    <h2>
+    {% if post.url %}
+    <a href="{{ post.url }}">{{ post.title }} - Blog</a>
+    {% else %}
+    {{ post.title }} - Blog
+    {% endif %}
+    </h2>
+    <h5>{{ post.created_at}}</h5>
+            <pre><h3>{{ post.content }}</h3></pre>
+    </section>
+    <br>
+{% endblock %}
