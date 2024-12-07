@@ -1,0 +1,38 @@
+{% extends './layout.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- Post content-->
+            <article>
+                <!-- Post header-->
+                <header class="mb-4">
+                    <!-- Post title-->
+                    <h1 class="fw-bolder mb-1">{{ post.title }}
+                    {% if post.category %}
+                     - {{ post.category }}
+                    {% else %}
+                     - 미분류
+                    {% endif %}
+                    </h1>
+                    <!-- Post meta content-->
+                    <div class="text-muted fst-italic mb-2">{{ post.created_at}} by {{ post.author | upper }}</div>
+                    {% if post.tags.exists %}
+                        <i class="fas fa-tags"></i>Tag : 
+                        {% for tag in post.tags.iterator %}
+                            <a href="#"><span class="badge badge-secondary" style="color: black;">{{ tag }}({{ tag.post_set.count}})</span></a>
+                        {% endfor %}
+                    {% endif %}
+                </header>
+                <!-- Preview image figure-->
+                <figure class="mb-4">{% if post.head_image %}<img class="img-fluid rounded" src="{{ post.head_image.url }}" alt="" />{% endif %}</figure>
+                <!-- Post content-->
+                <section class="mb-5">
+                    <p class="fs-5 mb-4">{{ post.content }}</p>
+                </section>
+            </article>
+        </div>
+    </div>
+{% endblock %}
