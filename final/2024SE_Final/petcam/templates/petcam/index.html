@@ -1,0 +1,36 @@
+{% extends './layout.html' %}
+{% load static %}
+
+{% block content %}
+<!-- 상단 리셋 버튼 -->
+<div class="action-bar">
+    <span class="fs-5">🐾 <strong>펫 캠 제어</strong></span>
+    <div>
+        <button id="toggle-btn">Loading...</button>
+    </div>
+    <div>
+        <p id="status"></p>
+    </div>
+    <div>
+        <button class="btn btn-outline-danger btn-sm">리셋</button>
+    </div>
+</div>
+
+<div class="container">
+    <!-- 카메라 피드 -->
+    <div class="camera-container">
+        <img id="camera-feed" src="http://주소:5000/stream.mjpg" alt="펫 캠 화면">
+    </div>
+</div>
+
+<!-- 제어 버튼 -->
+<div class="control-section">
+    <!-- 녹화 버튼 -->
+    <button id="record-btn" class="btn btn-record btn-lg shadow">
+        <i class="bi bi-record-circle"></i> 녹화
+    </button>
+</div>
+<script src="{% static 'petcam/js/reset.js' %}"></script>
+<script src="{% static 'petcam/js/record.js' %}"></script>
+<script src="{% static 'petcam/js/motion.js' %}"></script>
+{% endblock %}
